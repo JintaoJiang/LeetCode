@@ -16,8 +16,6 @@ class Solution(object):
                     skills |= 1 << dic[skill]
             for req, team in dp.items():
                 with_skills = skills | req
-                if with_skills == req:
-                    continue
                 if with_skills not in dp or len(dp[with_skills]) > len(team) + 1:
                     dp[with_skills] = team + [i]
         
